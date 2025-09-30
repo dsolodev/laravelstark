@@ -5,7 +5,9 @@
     "description": "The skeleton application for the Laravel framework.",
     "keywords": [
         "laravel",
-        "framework"
+        "framework",
+        "filament",
+        "starter-kit"
     ],
     "license": "MIT",
     "require": {
