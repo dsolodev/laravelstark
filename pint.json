@@ -5,7 +5,14 @@
         "array_push": true,
         "backtick_to_shell_exec": true,
         "binary_operator_spaces": false,
+        "braces_position": {
+            "control_structures_opening_brace": "same_line"
+        },
+        "control_structure_braces": false,
         "date_time_immutable": true,
+        "declare_equal_normalize": {
+            "space": "single"
+        },
         "declare_strict_types": true,
         "final_class": true,
         "final_internal_class": true,
