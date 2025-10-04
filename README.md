@@ -1,61 +1,59 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# LaravelStark
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+<p>
+    <a href="https://github.com/dsolodev/laravelstark/actions"><img src="https://github.com/dsolodev/laravelstark/actions/workflows/tests.yml/badge.svg" alt="Build Status"></a>
+    <a href="https://packagist.org/packages/dsolodev/laravelstark"><img src="https://img.shields.io/packagist/dt/dsolodev/laravelstark" alt="Total Downloads"></a>
+    <a href="https://packagist.org/packages/dsolodev/laravelstark"><img src="https://img.shields.io/packagist/v/dsolodev/laravelstark" alt="Latest Stable Version"></a>
+    <a href="https://packagist.org/packages/dsolodev/laravelstark"><img src="https://img.shields.io/packagist/l/dsolodev/laravelstark" alt="License"></a>
 </p>
 
-## About Laravel
+**LaravelStark** is a opinionated starter kit [Laravel](https://laravel.com) with [Filament](https://filamentphp.com/)
+skeleton that enforces rigorous development standards through meticulous
+tooling configuration and architectural decisions that prioritize type safety, immutability, and fail-fast principles.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Getting Started
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+> **Requires [PHP 8.4+](https://php.net/releases/)**.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Create your type-safe Laravel application using [Composer](https://getcomposer.org):
 
-## Learning Laravel
+```bash
+composer create-project dsolodev/laravelstark --prefer-dist example-app
+```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Verify Installation
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Run the test suite to ensure everything is configured correctly:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+```bash
+composer test
+```
 
-## Laravel Sponsors
+You should see 100% test coverage and all quality checks passing.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## Available Tooling
 
-### Premium Partners
+### Development
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+- `composer dev` - Starts Laravel server, queue worker, log monitoring, and Vite dev server concurrently
 
-## Contributing
+### Code Quality
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- `composer lint` - Runs Rector (refactoring), Pint (PHP formatting), and Prettier (JS/TS formatting)
+- `composer test:lint` - Dry-run mode for CI/CD pipelines
 
-## Code of Conduct
+### Testing
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+- `composer test:type-coverage` - Ensures 100% type coverage with Pest
+- `composer test:types` - Runs PHPStan at level 9 (maximum strictness)
+- `composer test:unit` - Runs Pest tests with 100% code coverage requirement
+- `composer test` - Runs the complete test suite (type coverage, unit tests, linting, static analysis)
 
-## Security Vulnerabilities
+### Maintenance
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- `composer update:requirements` - Updates all PHP and NPM dependencies to latest versions
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+**LaravelStark** was created by me for personal use and licensed under
+the [MIT license](https://opensource.org/licenses/MIT).
