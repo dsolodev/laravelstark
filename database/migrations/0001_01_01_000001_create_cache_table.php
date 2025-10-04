@@ -12,17 +12,21 @@ return new class() extends Migration {
      */
     public function up(): void
     {
-        if (Schema::hasTable('cache')) return;
+        if (Schema::hasTable('cache')) {
+            return;
+        }
 
-        Schema::create('cache', function (Blueprint $table) {
+        Schema::create('cache', function (Blueprint $table): void {
             $table->string('key')->primary();
             $table->mediumText('value');
             $table->integer('expiration');
         });
 
-        if (Schema::hasTable('cache_locks')) return;
+        if (Schema::hasTable('cache_locks')) {
+            return;
+        }
 
-        Schema::create('cache_locks', function (Blueprint $table) {
+        Schema::create('cache_locks', function (Blueprint $table): void {
             $table->string('key')->primary();
             $table->string('owner');
             $table->integer('expiration');
