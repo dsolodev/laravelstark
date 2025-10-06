@@ -56,8 +56,6 @@
         ],
         "post-update-cmd": [
             "@php artisan vendor:publish --tag=laravel-assets --ansi --force",
-            "@php artisan log-viewer:publish",
-            "@php artisan icons:cache",
             "@php artisan clear",
             "@update:requirements"
         ],
@@ -68,6 +66,11 @@
             "@php artisan key:generate --ansi",
             "@php -r \"file_exists('database/database.sqlite') || touch('database/database.sqlite');\"",
             "@php artisan migrate --graceful --ansi"
+        ],
+        "post-install-cmd": [
+            "@php artisan vendor:publish --tag=laravel-assets --ansi --force",
+            "@php artisan log-viewer:publish --ansi",
+            "@php artisan icons:cache --ansi"
         ],
         "update:requirements": [
             "composer bump",
