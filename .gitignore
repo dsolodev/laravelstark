@@ -10,14 +10,15 @@
 .env
 .env.backup
 .env.production
+.npmrc
 .phpactor.json
 .phpunit.result.cache
-.npmrc
+.rector_cache
 Homestead.json
 Homestead.yaml
 Thumbs.db
+auth.json
 *.log
-/auth.json
 /.fleet
 /.idea
 /.nova
