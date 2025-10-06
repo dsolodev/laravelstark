@@ -16,7 +16,7 @@
             "anonymous_functions_opening_brace": "same_line",
             "classes_opening_brace": "next_line_unless_newline_at_signature_end",
             "control_structures_opening_brace": "same_line",
-            "functions_opening_brace": "same_line"
+            "functions_opening_brace": "next_line_unless_newline_at_signature_end"
         },
         "control_structure_braces": false,
         "date_time_immutable": true,
