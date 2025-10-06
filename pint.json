@@ -9,11 +9,18 @@
         "braces_position": {
             "allow_single_line_anonymous_functions": true,
             "allow_single_line_empty_anonymous_classes": true,
-            "anonymous_classes_opening_brace": "next_line_unless_newline_at_signature_end",
+            "anonymous_classes_opening_brace": "same_line",
             "anonymous_functions_opening_brace": "same_line",
             "classes_opening_brace": "next_line_unless_newline_at_signature_end",
             "control_structures_opening_brace": "same_line",
             "functions_opening_brace": "next_line_unless_newline_at_signature_end"
+        },
+        "class_definition": {
+            "single_line": true,
+            "single_item_single_line": true,
+            "space_before_parenthesis": false,
+            "inline_constructor_arguments": false,
+            "multi_line_extends_each_single_line": true
         },
         "control_structure_braces": false,
         "date_time_immutable": true,
