@@ -57,7 +57,6 @@
         "post-update-cmd": [
             "@php artisan vendor:publish --tag=laravel-assets --ansi --force",
             "@php artisan log-viewer:publish",
-            "@php artisan blade-fontawesome:sync-icons --pro",
             "@php artisan icons:cache",
             "@php artisan clear",
             "@update:requirements"
