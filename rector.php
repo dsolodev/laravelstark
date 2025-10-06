@@ -6,6 +6,7 @@ use Rector\Caching\ValueObject\Storage\FileCacheStorage;
 use Rector\CodeQuality\Rector\If_\CompleteMissingIfElseBracketRector;
 use Rector\Config\RectorConfig;
 use Rector\Exception\Configuration\InvalidConfigurationException;
+use Rector\Php81\Rector\ClassMethod\NewInInitializerRector;
 use Rector\Php83\Rector\ClassMethod\AddOverrideAttributeToOverriddenMethodsRector;
 use RectorLaravel\Set\LaravelSetList;
 use RectorLaravel\Set\LaravelSetProvider;
@@ -21,7 +22,6 @@ try {
                            LaravelSetList::LARAVEL_CONTAINER_STRING_TO_FULLY_QUALIFIED_NAME,
                            LaravelSetList::LARAVEL_ELOQUENT_MAGIC_METHOD_TO_QUERY_BUILDER,
                            LaravelSetList::LARAVEL_FACADE_ALIASES_TO_FULL_NAMES,
-                           LaravelSetList::LARAVEL_FACTORIES,
                            LaravelSetList::LARAVEL_IF_HELPERS,
                            LaravelSetList::LARAVEL_LEGACY_FACTORIES_TO_CLASSES,
                        ])
@@ -37,6 +37,9 @@ try {
                            __DIR__.'/database',
                            __DIR__.'/public',
                            __DIR__.'/routes',
+                       ])
+                       ->withRules([
+                           NewInInitializerRector::class,
                        ])
                        ->withSkip([
                            AddOverrideAttributeToOverriddenMethodsRector::class,
