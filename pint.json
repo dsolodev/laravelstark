@@ -1,9 +1,6 @@
 {
     "preset": "laravel",
-    "notPath": [
-        "tests/TestCase.php",
-        "tmp"
-    ],
+    "notPath": ["tests/TestCase.php", "tmp"],
     "rules": {
         "align_multiline_comment": true,
         "array_push": true,
@@ -28,6 +25,11 @@
         "final_internal_class": true,
         "final_public_method_for_abstract_class": true,
         "fully_qualified_strict_types": true,
+        "function_declaration": {
+            "closure_function_spacing": "none",
+            "closure_fn_spacing": "none",
+            "trailing_comma_single_line": false
+        },
         "global_namespace_import": {
             "import_classes": true,
             "import_constants": true,
