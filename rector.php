@@ -3,6 +3,7 @@
 declare(strict_types = 1);
 
 use Rector\Caching\ValueObject\Storage\FileCacheStorage;
+use Rector\CodeQuality\Rector\If_\CompleteMissingIfElseBracketRector;
 use Rector\Config\RectorConfig;
 use Rector\Exception\Configuration\InvalidConfigurationException;
 use Rector\Php83\Rector\ClassMethod\AddOverrideAttributeToOverriddenMethodsRector;
@@ -39,6 +40,7 @@ try {
                        ])
                        ->withSkip([
                            AddOverrideAttributeToOverriddenMethodsRector::class,
+                           CompleteMissingIfElseBracketRector::class,
                        ])
                        ->withPreparedSets(
                            deadCode        : true,
