@@ -2,9 +2,9 @@ name: Lint
 
 on:
   push:
-    branches: [ main, develop ]
+    branches: [ main ]
   pull_request:
-    branches: [ main, develop ]
+    branches: [ main ]
 
 jobs:
   lint:
@@ -18,7 +18,7 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: 8.4
-          extensions: dom, curl, libxml, mbstring, zip, fileinfo
+          extensions: mbstring, xml, curl, pdo, pdo_sqlite, sqlite3
           coverage: none
 
       - name: Setup Node
@@ -36,5 +36,5 @@ jobs:
           composer install --no-interaction --prefer-dist
           npm ci
 
-      - name: Run linting
-        run: composer test:lint
+      - name: Run Tests
+        run: composer test

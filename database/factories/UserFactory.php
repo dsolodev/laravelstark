@@ -19,11 +19,6 @@ final class UserFactory extends Factory
      */
     private static string $password;
 
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
     public function definition(): array
     {
         return [
