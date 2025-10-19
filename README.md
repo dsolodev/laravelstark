@@ -15,10 +15,12 @@ tooling configuration and architectural decisions that prioritize type safety, i
 
 > **Requires [PHP 8.4+](https://php.net/releases/)**.
 
-Create your type-safe Laravel application using [Composer](https://getcomposer.org):
+### Installation
+
+You can use the [Laravel Installer](https://laravel.com/docs#installing-php) to install this starter kit.
 
 ```bash
-composer create-project dsolodev/laravelstark --prefer-dist example-app
+laravel new my-app --using=dsolodev/laravelstark
 ```
 
 ### Verify Installation

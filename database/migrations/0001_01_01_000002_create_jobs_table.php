@@ -16,7 +16,7 @@ return new class() extends Migration {
             return;
         }
 
-        Schema::create('jobs', function (Blueprint $table): void {
+        Schema::create('jobs', function(Blueprint $table): void {
             $table->id();
             $table->string('queue')->index();
             $table->longText('payload');
@@ -30,7 +30,7 @@ return new class() extends Migration {
             return;
         }
 
-        Schema::create('job_batches', function (Blueprint $table): void {
+        Schema::create('job_batches', function(Blueprint $table): void {
             $table->string('id')->primary();
             $table->string('name');
             $table->integer('total_jobs');
@@ -47,7 +47,7 @@ return new class() extends Migration {
             return;
         }
 
-        Schema::create('failed_jobs', function (Blueprint $table): void {
+        Schema::create('failed_jobs', function(Blueprint $table): void {
             $table->id();
             $table->string('uuid')->unique();
             $table->text('connection');

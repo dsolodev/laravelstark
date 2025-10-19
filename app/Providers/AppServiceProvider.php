@@ -25,7 +25,7 @@ final class AppServiceProvider extends ServiceProvider
         Model::unguard();
         FilamentTimezone::set(config('app.timezone'));
         LogViewer::auth(
-            fn (Request $request): bool => $request->user() && $request->user()->email = 'me@dsolo.dev'
+            fn(Request $request): bool => $request->user() && $request->user()->email = 'me@dsolo.dev'
         );
         FilamentIcon::register([
             'actions::action-group'        => 'fal-ellipsis-vertical',
@@ -33,8 +33,8 @@ final class AppServiceProvider extends ServiceProvider
             'actions::edit-action.grouped' => 'fal-pen-to-square',
         ]);
         Notifications::verticalAlignment(VerticalAlignment::End);
-        TextInput::configureUsing(fn (TextInput $component): TextInput => $component->columnSpanFull());
-        Select::configureUsing(fn (Select $component): Select => $component->columnSpanFull());
+        TextInput::configureUsing(fn(TextInput $component): TextInput => $component->columnSpanFull());
+        Select::configureUsing(fn(Select $component): Select => $component->columnSpanFull());
     }
 
     public function register(): void
@@ -43,7 +43,7 @@ final class AppServiceProvider extends ServiceProvider
 
         FilamentView::registerRenderHook(
             'panels::body.end',
-            fn (): string => Blade::render("@vite('resources/js/app.js')")
+            fn(): string => Blade::render("@vite('resources/js/app.js')")
         );
     }
 }

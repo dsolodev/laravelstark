@@ -16,7 +16,7 @@ return new class() extends Migration {
             return;
         }
 
-        Schema::create('users', function (Blueprint $table): void {
+        Schema::create('users', function(Blueprint $table): void {
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
@@ -24,7 +24,7 @@ return new class() extends Migration {
             $table->string('password');
             $table->rememberToken();
             $table->boolean('is_active')
-                  ->default(true);
+                ->default(true);
             $table->timestamps();
         });
 
@@ -32,7 +32,7 @@ return new class() extends Migration {
             return;
         }
 
-        Schema::create('password_reset_tokens', function (Blueprint $table): void {
+        Schema::create('password_reset_tokens', function(Blueprint $table): void {
             $table->string('email')->primary();
             $table->string('token');
             $table->timestamp('created_at')->nullable();
@@ -42,7 +42,7 @@ return new class() extends Migration {
             return;
         }
 
-        Schema::create('sessions', function (Blueprint $table): void {
+        Schema::create('sessions', function(Blueprint $table): void {
             $table->string('id')->primary();
             $table->foreignId('user_id')->nullable()->index();
             $table->string('ip_address', 45)->nullable();
