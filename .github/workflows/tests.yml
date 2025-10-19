@@ -20,7 +20,15 @@ jobs:
           php-version: 8.4
           extensions: mbstring, xml, curl, pdo, pdo_sqlite, sqlite3
           coverage: none
-          
+
+      - name: Cache Composer dependencies
+        uses: actions/cache@v4
+        with:
+          path: vendor
+          key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:

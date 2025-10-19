@@ -77,23 +77,19 @@
             "composer bump",
             "npx npm-check-updates -u"
         ],
-        "lint": [
-            "rector",
-            "pint --parallel",
-            "npm run lint"
-        ],
-        "test:lint": [
-            "pint --parallel --test",
-            "rector --dry-run",
-            "peck",
-            "npm run test:lint"
-        ],
-        "test:types": "phpstan",
+        "lint": "pint",
+        "refactor": "rector",
         "test:type-coverage": "pest --type-coverage --min=100",
+        "test:lint": "pint --test",
+        "test:unit": "pest --parallel --coverage --exactly=100",
+        "test:types": "phpstan",
+        "test:refactor": "rector --dry-run",
         "test": [
+            "@test:type-coverage",
+            "@test:unit",
             "@test:lint",
             "@test:types",
-            "@test:type-coverage"
+            "@test:refactor"
         ]
     },
     "extra": {

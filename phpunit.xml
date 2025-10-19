@@ -3,6 +3,11 @@
          xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
          bootstrap="vendor/autoload.php"
          colors="true"
+         stopOnFailure="false"
+         executionOrder="random"
+         failOnWarning="true"
+         failOnRisky="true"
+         beStrictAboutOutputDuringTests="true"
 >
     <testsuites>
         <testsuite name="Unit">
@@ -16,10 +21,6 @@
         <include>
             <directory>app</directory>
         </include>
-        <exclude>
-            <directory>app/Providers</directory>
-            <file>app/Http/Controllers/Controller.php</file>
-        </exclude>
     </source>
     <php>
         <env name="APP_ENV" value="testing"/>
@@ -35,10 +36,4 @@
         <env name="TELESCOPE_ENABLED" value="false"/>
         <env name="NIGHTWATCH_ENABLED" value="false"/>
     </php>
-    <coverage>
-        <report>
-            <html outputDirectory="coverage/html"/>
-            <clover outputFile="coverage/clover.xml"/>
-        </report>
-    </coverage>
 </phpunit>

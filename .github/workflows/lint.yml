@@ -37,4 +37,4 @@ jobs:
           npm ci
 
       - name: Run Tests
-        run: composer test
+        run: composer test:lint
