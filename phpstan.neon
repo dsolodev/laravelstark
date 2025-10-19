@@ -1,7 +1,6 @@
 includes:
     - vendor/larastan/larastan/extension.neon
     - vendor/nesbot/carbon/extension.neon
-    - phar://phpstan.phar/conf/bleedingEdge.neon
 
 parameters:
 
@@ -13,7 +12,7 @@ parameters:
         - public
         - routes
 
-
     level: max
-
-    tmpDir: /tmp/phpstan
+    checkModelProperties: true
+    checkOctaneCompatibility: false
+    noEnvCallsOutsideOfConfig: true
