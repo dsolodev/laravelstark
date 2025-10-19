@@ -243,16 +243,12 @@ This executes:
 
 1. ✅ Pint code style check (dry-run)
 2. ✅ Rector refactoring check (dry-run)
-3. ✅ Peck spell checking
-4. ✅ Prettier formatting check
-5. ✅ PHPStan static analysis (level 9)
+3. ✅ Prettier formatting check
+4. ✅ PHPStan static analysis (level max)
 
 ### Individual Test Commands
 
 ```bash
-# Unit tests with Pest
-composer test:unit
-
 # Static analysis with PHPStan
 composer test:types
 
@@ -262,11 +258,8 @@ composer test:type-coverage
 # Code style check (dry-run)
 composer test:lint
 
-# Run specific test file
-vendor/bin/pest tests/Feature/ExampleTest.php
-
-# Run with coverage report
-vendor/bin/pest --coverage
+# Refactoring check (dry-run)
+composer test:refactor
 ```
 
 ### Fix Code Style Issues
@@ -362,7 +355,6 @@ composer test:lint              # Check code style (dry-run)
 
 # Testing
 composer test                   # Run full test suite
-composer test:unit              # Run unit tests only
 composer test:types             # Run PHPStan analysis
 composer test:type-coverage     # Check type coverage
 
