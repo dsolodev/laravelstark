@@ -9,7 +9,6 @@ use Filament\Forms\Components\TextInput;
 use Filament\Notifications\Livewire\Notifications;
 use Filament\Support\Enums\VerticalAlignment;
 use Filament\Support\Facades\FilamentIcon;
-use Filament\Support\Facades\FilamentTimezone;
 use Filament\Support\Facades\FilamentView;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
@@ -23,9 +22,8 @@ final class AppServiceProvider extends ServiceProvider
     {
         Model::shouldBeStrict();
         Model::unguard();
-        FilamentTimezone::set(config('app.timezone'));
         LogViewer::auth(
-            fn(Request $request): bool => $request->user() && $request->user()->email = 'me@dsolo.dev'
+            fn(Request $request): bool => $request->user()?->email === config('app.developer_email')
         );
         FilamentIcon::register([
             'actions::action-group'        => 'fal-ellipsis-vertical',

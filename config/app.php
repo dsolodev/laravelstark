@@ -41,7 +41,18 @@ return [
     |
     */
 
-    'debug' => (bool) env('APP_DEBUG', false),
+    'debug'           => (bool)env('APP_DEBUG', false),
+
+    /*
+     * --------------------------------------------------------------------------
+     * Developer Email
+     * --------------------------------------------------------------------------
+     *
+     * This email address is used to identify the developer of the application.
+     * It is used for authentication purposes in certain features, such as
+     * accessing the log viewer.
+     */
+    'developer_email' => env('DEVELOPER_EMAIL', ''),
 
     /*
     |--------------------------------------------------------------------------
@@ -103,7 +114,7 @@ return [
 
     'previous_keys' => [
         ...array_filter(
-            explode(',', (string) env('APP_PREVIOUS_KEYS', ''))
+            explode(',', (string)env('APP_PREVIOUS_KEYS', ''))
         ),
     ],
 

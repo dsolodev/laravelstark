@@ -5,6 +5,7 @@
     "trailingComma": "es5",
     "printWidth": 120,
     "plugins": [
+        "prettier-plugin-organize-imports",
         "prettier-plugin-blade",
         "prettier-plugin-tailwindcss"
     ],

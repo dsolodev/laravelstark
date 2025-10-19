@@ -16,15 +16,18 @@ return new class() extends Migration {
             return;
         }
 
-        Schema::create('users', function(Blueprint $table): void {
+        Schema::create('users', function (Blueprint $table): void {
             $table->id();
             $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
+            $table->string('email')
+                ->unique();
+            $table->timestamp('email_verified_at')
+                ->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->boolean('is_active')
-                ->default(true);
+                ->default(true)
+                ->index();
             $table->timestamps();
         });
 
@@ -32,23 +35,31 @@ return new class() extends Migration {
             return;
         }
 
-        Schema::create('password_reset_tokens', function(Blueprint $table): void {
-            $table->string('email')->primary();
+        Schema::create('password_reset_tokens', function (Blueprint $table): void {
+            $table->string('email')
+                ->primary();
             $table->string('token');
-            $table->timestamp('created_at')->nullable();
+            $table->timestamp('created_at')
+                ->nullable();
         });
 
         if (Schema::hasTable('sessions')) {
             return;
         }
 
-        Schema::create('sessions', function(Blueprint $table): void {
-            $table->string('id')->primary();
-            $table->foreignId('user_id')->nullable()->index();
-            $table->string('ip_address', 45)->nullable();
-            $table->text('user_agent')->nullable();
+        Schema::create('sessions', function (Blueprint $table): void {
+            $table->string('id')
+                ->primary();
+            $table->foreignId('user_id')
+                ->nullable()
+                ->index();
+            $table->string('ip_address', 45)
+                ->nullable();
+            $table->text('user_agent')
+                ->nullable();
             $table->longText('payload');
-            $table->integer('last_activity')->index();
+            $table->integer('last_activity')
+                ->index();
         });
     }
 
