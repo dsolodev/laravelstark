@@ -16,7 +16,7 @@ return new class() extends Migration {
             return;
         }
 
-        Schema::create('users', function (Blueprint $table): void {
+        Schema::create('users', function(Blueprint $table): void {
             $table->id();
             $table->string('name');
             $table->string('email')
@@ -35,7 +35,7 @@ return new class() extends Migration {
             return;
         }
 
-        Schema::create('password_reset_tokens', function (Blueprint $table): void {
+        Schema::create('password_reset_tokens', function(Blueprint $table): void {
             $table->string('email')
                 ->primary();
             $table->string('token');
@@ -47,7 +47,7 @@ return new class() extends Migration {
             return;
         }
 
-        Schema::create('sessions', function (Blueprint $table): void {
+        Schema::create('sessions', function(Blueprint $table): void {
             $table->string('id')
                 ->primary();
             $table->foreignId('user_id')

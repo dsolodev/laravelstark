@@ -17,7 +17,7 @@ pest()->extend(Tests\TestCase::class)
     // ->use(Illuminate\Foundation\Testing\RefreshDatabase::class)
     ->in('Feature');
 
-uses()->beforeAll(function () {})->in('Feature', 'Unit');
+uses()->beforeAll(function() {})->in('Feature', 'Unit');
 
 /*
 |--------------------------------------------------------------------------
@@ -30,7 +30,7 @@ uses()->beforeAll(function () {})->in('Feature', 'Unit');
 |
 */
 
-expect()->extend('toBeOne', function () {
+expect()->extend('toBeOne', function() {
     return $this->toBe(1);
 });
 

@@ -100,8 +100,8 @@ APP_ENV=local
 APP_DEBUG=true
 APP_URL=http://localhost
 
-# Configure admin access
-ADMIN_EMAIL=admin@example.com
+# Configure developer email for log viewer access
+DEVELOPER_EMAIL=jc@dsolo.dev
 
 # Database (SQLite by default)
 DB_CONNECTION=sqlite
@@ -115,9 +115,9 @@ The SQLite database is created automatically during installation. Run migrations
 php artisan migrate --seed
 ```
 
-**Default Admin Credentials:**
+**Default Developer Credentials:**
 
-- Email: `admin@example.com`
+- Email: `jc@dsolo.dev`
 - Password: `password`
 
 ⚠️ **Change these credentials immediately in production!**
@@ -169,10 +169,10 @@ public function panel(Panel $panel): Panel
 
 ### Log Viewer Authentication
 
-By default, only users with the admin email can access logs. Configure in `.env`:
+By default, only users with the developer email can access logs. Configure in `.env`:
 
 ```env
-ADMIN_EMAIL=your-admin@example.com
+DEVELOPER_EMAIL=jc@dsolo.dev
 ```
 
 Or modify the authentication logic:
@@ -181,7 +181,7 @@ Or modify the authentication logic:
 // app/Providers/AppServiceProvider.php
 
 LogViewer::auth(
-    fn(Request $request): bool => $request->user()?->email === config('app.admin_email')
+    fn(Request $request): bool => $request->user()?->email === config('app.developer_email')
 );
 ```
 

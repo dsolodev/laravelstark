@@ -94,7 +94,7 @@
             "@test:lint",
             "@test:types",
             "@test:type-coverage",
-            "@test:type-coverage-json",
+            "@test:type-coverage-json"
         ]
     },
     "extra": {
