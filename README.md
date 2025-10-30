@@ -16,7 +16,6 @@ configuration and architectural decisions that prioritize type safety, immutabil
 - ✅ **100% Type Coverage** with Pest
 - ✅ **PHPStan Level 9** (maximum strictness)
 - ✅ **Filament 4.1** admin panel pre-configured
-- ✅ **FontAwesome Pro 7.1** icons integration
 - ✅ **Log Viewer** (opcodesio/log-viewer)
 - ✅ **Rector**, **Pint**, **Prettier** for automated code quality
 - ✅ **GitHub Actions** CI/CD workflows
@@ -31,7 +30,6 @@ Before installing LaravelStark, ensure you have:
 - **Composer 2.7+**
 - **Node.js 20+** and npm
 - **[Laravel Installer](https://laravel.com/docs/installation#creating-a-laravel-project)** (recommended)
-- **FontAwesome Pro License** (required for icons)
 - **Database**: SQLite (default), MySQL 8.0+, or PostgreSQL 15+
 
 ### Installing Laravel Installer
@@ -64,27 +62,14 @@ cd my-app
 
 ---
 
-### 1. Configure FontAwesome Pro
-
-Create `.npmrc` in your project root with your FontAwesome Pro token:
-
-```
-@fortawesome:registry=https://npm.fontawesome.com/
-//npm.fontawesome.com/:_authToken=YOUR_TOKEN_HERE
-```
-
-Get your token from: [https://fontawesome.com/account](https://fontawesome.com/account)
-
-⚠️ **Security Note:** Never commit `.npmrc` to version control! It's already in `.gitignore`.
-
-### 2. Install Dependencies
+### 1. Install Dependencies
 
 ```bash
 npm install
 npm run build
 ```
 
-### 3. Environment Setup
+### 2. Environment Setup
 
 The `.env` file is automatically created during installation. Generate your application key:
 
@@ -107,7 +92,7 @@ DEVELOPER_EMAIL=jc@dsolo.dev
 DB_CONNECTION=sqlite
 ```
 
-### 4. Database Setup
+### 3. Database Setup
 
 The SQLite database is created automatically during installation. Run migrations and seeders:
 
@@ -122,7 +107,7 @@ php artisan migrate --seed
 
 ⚠️ **Change these credentials immediately in production!**
 
-### 5. Start Development
+### 4. Start Development
 
 ```bash
 composer dev
@@ -184,28 +169,6 @@ LogViewer::auth(
     fn(Request $request): bool => $request->user()?->email === config('app.developer_email')
 );
 ```
-
-### FontAwesome Icons
-
-LaravelStark uses FontAwesome Light icons by default. Customize icons:
-
-```php
-// app/Providers/AppServiceProvider.php
-
-FilamentIcon::register([
-    'actions::action-group' => 'fal-ellipsis-vertical', // Light
-    'actions::edit-action' => 'fas-pen-to-square',      // Solid
-    'actions::delete-action' => 'far-trash-alt',        // Regular
-]);
-```
-
-Available prefixes:
-
-- `fal-` - FontAwesome Light
-- `fas-` - FontAwesome Solid
-- `far-` - FontAwesome Regular
-- `fad-` - FontAwesome Duotone
-- `fab-` - FontAwesome Brands
 
 ### Database Configuration
 
@@ -572,40 +535,6 @@ public function canAccessPanel(Panel $panel): bool
 }
 ```
 
-## 🤝 Contributing
-
-This is a personal starter kit, but suggestions and improvements are welcome!
-
-### How to Contribute
-
-1. **Fork** the repository
-2. **Create** a feature branch:
-
-```bash
-git checkout -b feature/amazing-feature
-```
-
-3. **Make changes** following code standards
-4. **Run tests**:
-
-```bash
-composer test
-```
-
-5. **Commit** with descriptive message:
-
-```bash
-git commit -m "feat: add amazing feature"
-```
-
-6. **Push** to your fork:
-
-```bash
-git push origin feature/amazing-feature
-```
-
-7. **Create** a Pull Request
-
 ### Code Standards
 
 - Use **strict types**: `declare(strict_types = 1);`
@@ -632,7 +561,6 @@ For detailed guidelines, see [CONTRIBUTING.md](CONTRIBUTING.md).
 - **[laravel/framework](https://github.com/laravel/framework)** - The Laravel Framework
 - **[filament/filament](https://github.com/filamentphp/filament)** - Admin panel
 - **[opcodesio/log-viewer](https://github.com/opcodesio/log-viewer)** - Log viewer
-- **[owenvoke/blade-fontawesome](https://github.com/owenvoke/blade-fontawesome)** - FontAwesome Blade components
 - **[larastan/larastan](https://github.com/larastan/larastan)** - PHPStan for Laravel
 - **[pestphp/pest](https://github.com/pestphp/pest)** - Testing framework
 - **[rectorphp/rector](https://github.com/rectorphp/rector)** - Automated refactoring
