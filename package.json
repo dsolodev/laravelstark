@@ -9,17 +9,16 @@
         "test:lint": "prettier --check resources/"
     },
     "devDependencies": {
-        "@fortawesome/fontawesome-pro": "^7.1.0",
-        "@tailwindcss/vite": "^4.1.14",
-        "axios": "^1.12.2",
+        "@tailwindcss/vite": "^4.1.16",
+        "axios": "^1.13.1",
         "concurrently": "^9.2.1",
         "laravel-vite-plugin": "^2.0.1",
         "prettier": "^3.6.2",
         "prettier-plugin-blade": "^2.1.21",
         "prettier-plugin-organize-imports": "^4.3.0",
         "prettier-plugin-tailwindcss": "^0.7.1",
-        "tailwindcss": "^4.1.14",
-        "vite": "^7.1.10"
+        "tailwindcss": "^4.1.16",
+        "vite": "^7.1.12"
     },
     "engines": {
         "node": ">=20.0.0",

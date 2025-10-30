@@ -8,7 +8,6 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Notifications\Livewire\Notifications;
 use Filament\Support\Enums\VerticalAlignment;
-use Filament\Support\Facades\FilamentIcon;
 use Filament\Support\Facades\FilamentView;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
@@ -25,11 +24,6 @@ final class AppServiceProvider extends ServiceProvider
         LogViewer::auth(
             fn(Request $request): bool => $request->user()?->email === config('app.developer_email')
         );
-        FilamentIcon::register([
-            'actions::action-group'        => 'fal-ellipsis-vertical',
-            'actions::edit-action'         => 'fal-pen-to-square',
-            'actions::edit-action.grouped' => 'fal-pen-to-square',
-        ]);
         Notifications::verticalAlignment(VerticalAlignment::End);
         TextInput::configureUsing(fn(TextInput $component): TextInput => $component->columnSpanFull());
         Select::configureUsing(fn(Select $component): Select => $component->columnSpanFull());
