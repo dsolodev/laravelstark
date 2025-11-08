@@ -334,6 +334,7 @@ composer update:requirements    # Update all dependencies
 - **[Peck](https://github.com/peckphp/peck)** - Spell checker
 - **[Prettier](https://prettier.io/)** - JS/CSS formatter
 - **[Larastan](https://github.com/larastan/larastan)** - PHPStan for Laravel
+- **[Laravel Boost](https://laravel.com/docs/boost)** - Dependency updates (dev)
 
 ## 🔍 Troubleshooting
 
@@ -564,6 +565,7 @@ For detailed guidelines, see [CONTRIBUTING.md](CONTRIBUTING.md).
 - **[larastan/larastan](https://github.com/larastan/larastan)** - PHPStan for Laravel
 - **[pestphp/pest](https://github.com/pestphp/pest)** - Testing framework
 - **[rectorphp/rector](https://github.com/rectorphp/rector)** - Automated refactoring
+- **[laravel/boost](https://laravel.com/docs/boost)** - Dependency management (dev)
 
 ## 📝 License
 
