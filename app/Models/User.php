@@ -13,9 +13,8 @@ use Illuminate\Notifications\Notifiable;
 
 final class User extends Authenticatable implements FilamentUser
 {
-    /** @use HasFactory<UserFactory> */
-    use HasFactory, Notifiable;
-
+    use HasFactory;
+    use Notifiable;
     protected $fillable = [
         'name',
         'email',
