@@ -4,7 +4,6 @@ declare(strict_types = 1);
 
 namespace App\Models;
 
-use Database\Factories\UserFactory;
 use Filament\Models\Contracts\FilamentUser;
 use Filament\Panel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -15,6 +14,7 @@ final class User extends Authenticatable implements FilamentUser
 {
     use HasFactory;
     use Notifiable;
+
     protected $fillable = [
         'name',
         'email',
